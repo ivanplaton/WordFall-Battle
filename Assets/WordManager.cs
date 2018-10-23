@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class WordManager : MonoBehaviour {
 
 	public List<Word> words;
-
-	public WordSpawner wordSpawner;
+    public WordSpawner wordSpawner;
 
 	private bool hasActiveWord;
 	private Word activeWord;
@@ -29,8 +28,10 @@ public class WordManager : MonoBehaviour {
 
     public void AddWord ()
 	{
-		Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
-		words.Add(word);
+        Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
+        words.Add(word);
+        //words.Add(wordEnemy);
+
         if (explosion.isPlaying)
         {
             explosion.Stop();

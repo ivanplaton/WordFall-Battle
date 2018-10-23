@@ -164,9 +164,9 @@ public class MyNetManager : NetworkManager
     public void OnCustomMessage(NetworkMessage netMsg)
     {
         CustomMessage msg = netMsg.ReadMessage<CustomMessage>();
-        Debug.Log("On Custom Message Text: " + msg.text +
-                 "\nOn Custom Message WOrd: " + msg.EnemyWord +
-                 "\n Network is host: " + Data.isNetworkIdentityHost);
+        //Debug.Log("On Custom Message Text: " + msg.text +
+        //         "\nOn Custom Message WOrd: " + msg.EnemyWord +
+        //         "\n Network is host: " + Data.isNetworkIdentityHost);
 
         if (NetworkServer.active)
         {
@@ -177,6 +177,7 @@ public class MyNetManager : NetworkManager
                 //receivedText.text += msg.text = "[" + uid + "...]:" + msg.text + "\n";
                 Data.EnemyScore = Int32.Parse(msg.text);
                 Debug.Log("Receieved word from enemy: " + msg.EnemyWord);
+                Data.EnemyWords = msg.EnemyWord;
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
             }

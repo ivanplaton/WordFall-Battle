@@ -91,7 +91,8 @@ public class WordManager : MonoBehaviour {
     void Start()
     {
         MusicManager.Instance.gameObject.GetComponent<AudioSource>().Stop();
-        TxtLevel.text = "LEVEL: " + Data.LevelCategory;
+        if(Data.isNetwork)
+            TxtLevel.text = "LEVEL: " + Data.LevelCategory;
     }
 
     void Update()

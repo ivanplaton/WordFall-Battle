@@ -190,7 +190,10 @@ public class MyNetManager : NetworkManager
             {
                 string[] myStringSplit = msg.text.Split('-');
                 Data.EnemyScore = Int32.Parse(myStringSplit[1]);
+                Data.EnemyWords = msg.EnemyWord;
+                enemywordManager.AddWord();
                 txtEnemyScore.text = "Enemy: " + myStringSplit[1];
+
             }
         }
         else
@@ -198,6 +201,8 @@ public class MyNetManager : NetworkManager
             if (msg.text.Contains("S"))
             {
                 string[] myStringSplit = msg.text.Split('-');
+                Data.EnemyWords = msg.EnemyWord;
+                enemywordManager.AddWord();
                 Data.EnemyScore = Int32.Parse(myStringSplit[1]);
                 txtEnemyScore.text = "Enemy: " + myStringSplit[1];
             }
@@ -236,7 +241,7 @@ public class MyNetManager : NetworkManager
         CustomMessage msg = new CustomMessage();
         int connID = -1;
         msg.text = "S-" + Data.Score.ToString();
-
+        msg.EnemyWord = Data.EnemyWords;
         PlayerManager.playerData playerData = playerManager.getPlayerByUid(uid);
         connID = playerData.ConnID;
         Debug.Log("Send to Client - " + msg + " - " + connID.ToString());

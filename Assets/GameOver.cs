@@ -15,6 +15,11 @@ public class GameOver : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            MusicManager.Instance.gameObject.GetComponent<AudioSource>().Play();
+        }
+
         win_Image.enabled = false;
         lose_Image.enabled = false;
 

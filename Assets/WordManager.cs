@@ -90,6 +90,7 @@ public class WordManager : MonoBehaviour {
 
     void Start()
     {
+        MusicManager.Instance.gameObject.GetComponent<AudioSource>().Stop();
         TxtLevel.text = "LEVEL: " + Data.LevelCategory;
     }
 

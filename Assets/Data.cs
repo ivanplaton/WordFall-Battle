@@ -11,6 +11,8 @@ public class Data : MonoBehaviour {
     private static int _TimesTwo = 0;
     private static int _Combo = 0;
     private static int _EnemyScore = 0;
+    private static float _EnemyWordPosX = 0;
+    private static float _EnemyWordPosY = 0;
 
     private static bool _StartGame = false;
     private static bool _isClient = false;
@@ -44,6 +46,29 @@ public class Data : MonoBehaviour {
         set
         {
             _EnemyScore = value;
+        }
+    }
+    public static float EnemyWordPosX
+    {
+        get
+        {
+            return _EnemyWordPosX;
+        }
+        set
+        {
+            _EnemyWordPosX = value;
+        }
+    }
+
+    public static float EnemyWordPosY
+    {
+        get
+        {
+            return _EnemyWordPosY;
+        }
+        set
+        {
+            _EnemyWordPosY = value;
         }
     }
 

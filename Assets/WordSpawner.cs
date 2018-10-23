@@ -24,6 +24,7 @@ public class WordSpawner : MonoBehaviour {
         Vector3 randomPosition = new Vector3(8.2f, 4f);
 
         GameObject wordObj = Instantiate(wordPrefab, randomPosition, Quaternion.identity, enemyCanvas);
+        //wordObj.transform.SetParent(enemyCanvas.transform);
         wordObj.transform.position = randomPosition;
 
         Debug.Log("SpawnEnemyWord Displayed at: " + enemyCanvas + 

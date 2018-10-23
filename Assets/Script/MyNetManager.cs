@@ -78,7 +78,8 @@ public class MyNetManager : NetworkManager
     {
         public string text;
         public string EnemyWord;
-        public string score;
+        public float posX;
+        public float posY;
     };
 
     public class MyMsgType

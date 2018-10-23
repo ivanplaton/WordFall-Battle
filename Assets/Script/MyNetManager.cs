@@ -164,18 +164,28 @@ public class MyNetManager : NetworkManager
     public void OnCustomMessage(NetworkMessage netMsg)
     {
         CustomMessage msg = netMsg.ReadMessage<CustomMessage>();
+        Debug.Log("On Custom Message Text: " + msg.text +
+                 "\nOn Custom Message WOrd: " + msg.EnemyWord +
+                 "\n Network is host: " + Data.isNetworkIdentityHost);
 
         if (NetworkServer.active)
         {
             string uid = playerManager.getPlayerUidByConnID(netMsg.conn.connectionId);
             uid = uid.Substring(0, 10);
-            if (/*"ClientMain" != SceneManager.GetActiveScene().name*/ !Data.isNetworkIdentityHost)
+            if (/*"ClientMain" != SceneManager.GetActiveScene().name*/ Data.isNetworkIdentityHost)
             {
                 //receivedText.text += msg.text = "[" + uid + "...]:" + msg.text + "\n";
                 Data.EnemyScore = Int32.Parse(msg.text);
                 Debug.Log("Receieved word from enemy: " + msg.EnemyWord);
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
+            }
+
+            if (msg.text.Contains("S"))
+            {
+                string[] myStringSplit = msg.text.Split('-');
+                Data.EnemyScore = Int32.Parse(myStringSplit[1]);
+                txtEnemyScore.text = "Enemy: " + myStringSplit[1];
             }
         }
         else
@@ -188,7 +198,7 @@ public class MyNetManager : NetworkManager
             }
             //receivedText.text += msg.text;
         }
-        Debug.Log("OnCustomMessage : " + msg.text);
+
     }
 
     /// <summary>

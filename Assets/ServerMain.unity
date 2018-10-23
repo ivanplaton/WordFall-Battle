@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 99868345}
   - component: {fileID: 99868344}
   m_Layer: 5
-  m_Name: CanvasServer
+  m_Name: ServerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4523,7 +4523,7 @@ RectTransform:
   - {fileID: 499924043}
   - {fileID: 972271257}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7099,8 +7099,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1672668714}
   - component: {fileID: 1672668713}
-  - component: {fileID: 1672668712}
   - component: {fileID: 1672668711}
+  - component: {fileID: 1672668710}
   m_Layer: 0
   m_Name: WordManagerEnemyServer
   m_TagString: Untagged
@@ -7108,6 +7108,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1672668710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1672668709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2a8634e78a37140abe1d951be2beb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordPrefab: {fileID: 1513577208808720, guid: 827bf4519a2ae0f49b6494c13ad6c379, type: 2}
+  wordCanvas: {fileID: 357700897}
 --- !u!114 &1672668711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7121,19 +7134,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordManager: {fileID: 1672668713}
   wordDelay: 3
---- !u!114 &1672668712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1672668709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2a8634e78a37140abe1d951be2beb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordPrefab: {fileID: 1513577208808720, guid: 827bf4519a2ae0f49b6494c13ad6c379, type: 2}
-  wordCanvas: {fileID: 357700897}
 --- !u!114 &1672668713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7146,7 +7146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: []
-  wordSpawner: {fileID: 1672668712}
+  wordSpawner: {fileID: 1672668710}
   txtScore: {fileID: 0}
   txtTimer: {fileID: 0}
   txtComboCount: {fileID: 0}
@@ -7554,7 +7554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904127031
 GameObject:

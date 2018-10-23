@@ -7101,7 +7101,6 @@ GameObject:
   - component: {fileID: 1672668713}
   - component: {fileID: 1672668712}
   - component: {fileID: 1672668711}
-  - component: {fileID: 1672668710}
   m_Layer: 0
   m_Name: WordManagerEnemyServer
   m_TagString: Untagged
@@ -7109,26 +7108,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1672668710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1672668709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd346c2f77f30164999161d210eca19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wordManagerEnemy: {fileID: 1672668713}
-  wordDelay: 3
 --- !u!114 &1672668711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672668709}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e709038c6023b804f90c9f0cac031974, type: 3}
   m_Name: 
@@ -7154,7 +7140,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672668709}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78d13645174f19046ba2af9b861355a2, type: 3}
   m_Name: 

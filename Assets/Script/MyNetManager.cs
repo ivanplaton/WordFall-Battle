@@ -75,6 +75,8 @@ public class MyNetManager : NetworkManager
     public class CustomMessage : MessageBase
     {
         public string text;
+        public string EnemyWord;
+        public string score;
     };
 
     public class MyMsgType
@@ -171,6 +173,7 @@ public class MyNetManager : NetworkManager
             {
                 //receivedText.text += msg.text = "[" + uid + "...]:" + msg.text + "\n";
                 Data.EnemyScore = Int32.Parse(msg.text);
+                Debug.Log("Receieved word from enemy: " + msg.EnemyWord);
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
             }
@@ -234,6 +237,7 @@ public class MyNetManager : NetworkManager
         CustomMessage msg = new CustomMessage();
         //msg.text = inputfield.text;
         msg.text = Data.Score.ToString();
+        msg.EnemyWord = Data.EnemyWords;
         inputfield.text = "";
         Debug.Log("Send to Server - " + msg);
         myClient.Send(MyMsgType.Custom, msg);

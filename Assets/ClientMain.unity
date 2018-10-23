@@ -4399,6 +4399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordPrefab: {fileID: 1513577208808720, guid: 827bf4519a2ae0f49b6494c13ad6c379, type: 2}
   wordCanvas: {fileID: 1152268128}
+  enemyCanvas: {fileID: 0}
 --- !u!114 &390340881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5924,6 +5925,7 @@ MonoBehaviour:
   waitingPrefab: {fileID: 70115181}
   waitingParticle: {fileID: 70115184}
   txtEnemyScore: {fileID: 0}
+  enemywordManager: {fileID: 0}
 --- !u!4 &1070594811
 Transform:
   m_ObjectHideFlags: 0
@@ -6014,7 +6016,7 @@ Prefab:
     - target: {fileID: 224097380887059834, guid: 8c824bf65510ff94380f343741986fbf,
         type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 224097380887059834, guid: 8c824bf65510ff94380f343741986fbf,
         type: 2}
@@ -6598,7 +6600,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 1135921425}
   m_GameObject: {fileID: 1396712971}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.026291959, y: 0.0318593, z: 0.015}
   m_Children: []
   m_Father: {fileID: 910735575}

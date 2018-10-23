@@ -18,6 +18,8 @@ public class Data : MonoBehaviour {
     private static bool _isConnectedOnNetwork = false;
     private static bool _isNetworkIdentityHost = false;
 
+    private static string _EnemyWords;
+    private static string _EnemyLevel;
     private static string _LevelCategory;
     private static string _PlayerID;
 
@@ -42,6 +44,18 @@ public class Data : MonoBehaviour {
         set
         {
             _EnemyScore = value;
+        }
+    }
+
+    public static string EnemyLevel
+    {
+        get
+        {
+            return _EnemyLevel;
+        }
+        set
+        {
+            _EnemyLevel = value;
         }
     }
 
@@ -81,6 +95,18 @@ public class Data : MonoBehaviour {
         }
     }
 
+    public static string EnemyWords
+    {
+        get
+        {
+            return _EnemyWords;
+        }
+        set
+        {
+            _EnemyWords = value;
+        }
+    }
+
     public static bool StartGame
     {
         get
@@ -103,7 +129,9 @@ public class Data : MonoBehaviour {
             if (File.Exists(destination)) file = File.OpenRead(destination);
             else
             {
-                Debug.LogError("File not found");
+                File.Create(destination);
+                //file = File.OpenRead(destination);
+                Debug.LogError("File not found, Create new File");
                 return 0;
             }
 

@@ -31,7 +31,7 @@ public class WordManager : MonoBehaviour {
 	{
 		Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
 		words.Add(word);
-
+        Debug.Log("data.enemy word:" + Data.EnemyWords);
         if (explosion.isPlaying)
         {
             explosion.Stop();

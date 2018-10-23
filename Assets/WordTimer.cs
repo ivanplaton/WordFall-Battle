@@ -69,7 +69,7 @@ public class WordTimer : MonoBehaviour {
         {
             if (Data.StartGame)
             {
-                wordManager.AddWord();
+                wordManager.AddWord();                    
                 nextWordTime = Time.time + wordDelay;
             }
 

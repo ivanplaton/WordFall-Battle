@@ -48,7 +48,8 @@ public class WordGenerator : MonoBehaviour {
         string[] ar = getStringArray();
         int randomIndex = Random.Range(0, ar.Length);
         string randomWord = ar[randomIndex];
-
+        if (Data.isNetwork)
+            Data.EnemyWords = randomWord;
         return randomWord;
 
     }

@@ -48,7 +48,7 @@ public class WordDisplay : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(gameObject.name + " collided2D with " + col.gameObject.name);
+        //Debug.Log(gameObject.name + " collided2D with " + col.gameObject.name);
         //Debug.Log("Word " + text.text + " is destroyed");
         if (gameObject.name == "Word(Clone)" || gameObject.name == "WordEnemy(Clone)")
         {

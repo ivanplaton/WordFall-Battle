@@ -7109,14 +7109,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordPrefab: {fileID: 1852678123145376, guid: 8efcf8df8b41c5341ac719434eb4bb60, type: 2}
-  wordCanvas: {fileID: 357700897}
+  wordCanvas: {fileID: 0}
+  enemyCanvas: {fileID: 357700897}
 --- !u!114 &1672668711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1672668709}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e709038c6023b804f90c9f0cac031974, type: 3}
   m_Name: 
@@ -7515,6 +7516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordPrefab: {fileID: 1513577208808720, guid: 827bf4519a2ae0f49b6494c13ad6c379, type: 2}
   wordCanvas: {fileID: 99868349}
+  enemyCanvas: {fileID: 0}
 --- !u!114 &1875075757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7703,6 +7705,11 @@ Prefab:
       propertyPath: txtEnemyScore
       value: 
       objectReference: {fileID: 1220916268}
+    - target: {fileID: 114259636294321614, guid: e1df4eeb58e4f4f4bbf70ffc537ff3df,
+        type: 2}
+      propertyPath: enemywordManager
+      value: 
+      objectReference: {fileID: 1672668712}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1df4eeb58e4f4f4bbf70ffc537ff3df, type: 2}
   m_IsPrefabParent: 0

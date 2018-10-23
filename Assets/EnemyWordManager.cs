@@ -11,6 +11,6 @@ public class EnemyWordManager : MonoBehaviour {
     public void AddWord()
     {
         Debug.Log("Add word enemy:" + Data.EnemyWords);
-        Word word = new Word(Data.EnemyWords, wordSpawner.SpawnWord());
+        Word word = new Word(Data.EnemyWords, wordSpawner.SpawnEnemyWord());
     }
 }

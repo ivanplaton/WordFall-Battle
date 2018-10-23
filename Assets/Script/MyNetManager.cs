@@ -28,6 +28,8 @@ public class MyNetManager : NetworkManager
     private GameObject broadcaster;
     private GameObject checkerObject;
 
+    public EnemyWordManager enemywordManager;
+
     void Start()
     {
         address = null;
@@ -176,8 +178,9 @@ public class MyNetManager : NetworkManager
             {
                 //receivedText.text += msg.text = "[" + uid + "...]:" + msg.text + "\n";
                 Data.EnemyScore = Int32.Parse(msg.text);
-                Debug.Log("Receieved word from enemy: " + msg.EnemyWord);
+                Debug.Log("Recieved word from enemy: " + msg.EnemyWord);
                 Data.EnemyWords = msg.EnemyWord;
+                enemywordManager.AddWord();
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
             }

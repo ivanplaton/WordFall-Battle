@@ -7,6 +7,14 @@ public class MenuManager : MonoBehaviour {
 
     public int score = 120;
 
+    void Start()
+    {
+        if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+        {
+            MusicManager.Instance.gameObject.GetComponent<AudioSource>().Play();
+        }
+    }
+
     public void ToGame()
     {
         SceneManager.LoadScene("SelectLevel");

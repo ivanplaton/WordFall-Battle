@@ -2,16 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 
     public int score = 120;
 
+    public Toggle checkBox;
+
     void Start()
     {
+
+        if (Data.MuteSound)
+        {
+            checkBox.isOn = false;
+        }
+
         if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
         {
             MusicManager.Instance.gameObject.GetComponent<AudioSource>().Play();
+        }
+    }
+
+    public void Mute_Unmute()
+    {
+        if (checkBox.isOn)
+        {
+            Data.MuteSound = false;
+            if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                MusicManager.Instance.gameObject.GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            Data.MuteSound = true;
+            if (MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                MusicManager.Instance.gameObject.GetComponent<AudioSource>().Stop();
+            }
         }
     }
 
@@ -19,6 +48,7 @@ public class MenuManager : MonoBehaviour {
     {
         SceneManager.LoadScene("SelectLevel");
     }
+
     public void ToServerMain()
     {
         Data.isNetwork = true;

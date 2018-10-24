@@ -45,7 +45,7 @@ public class GameOver : MonoBehaviour {
         }
         else
         {
-            txtScore.text = "Score: " + Data.Score;
+            txtScore.text = "Score: " + Data.Score.ToString();
 
             if (Data.Score > Data.HighScore)
             {
@@ -53,7 +53,8 @@ public class GameOver : MonoBehaviour {
                 Data.HighScore = Data.Score;
             }
 
-            txtSecondContent.text = "High Score: " + Data.HighScore;
+            txtSecondContent.text = "High Score: " + Data.HighScore.ToString();
+
         }
 
 	}

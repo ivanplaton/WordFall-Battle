@@ -37,6 +37,19 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (!Data.MuteSound)
+        {
+            if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                MusicManager.Instance.gameObject.GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            if (MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)
+            {
+                MusicManager.Instance.gameObject.GetComponent<AudioSource>().Stop();
+            }
+        }
     }
 }

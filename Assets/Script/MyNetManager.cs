@@ -167,10 +167,7 @@ public class MyNetManager : NetworkManager
     public void OnCustomMessage(NetworkMessage netMsg)
     {
         CustomMessage msg = netMsg.ReadMessage<CustomMessage>();
-        //Debug.Log("On Custom Message Text: " + msg.text +
-        //         "\nOn Custom Message WOrd: " + msg.EnemyWord +
-        //         "\n Network is host: " + Data.isNetworkIdentityHost);
-
+        Debug.Log("1");
         if (NetworkServer.active)
         {
             string uid = playerManager.getPlayerUidByConnID(netMsg.conn.connectionId);
@@ -185,29 +182,18 @@ public class MyNetManager : NetworkManager
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
             }
-
-            if (msg.text.Contains("S"))
-            {
-                string[] myStringSplit = msg.text.Split('-');
-                Data.EnemyScore = Int32.Parse(myStringSplit[1]);
-                Data.EnemyWords = msg.EnemyWord;
-                enemywordManager.AddWord();
-                txtEnemyScore.text = "Enemy: " + myStringSplit[1];
-
-            }
         }
         else
         {
-            if (msg.text.Contains("S"))
-            {
-                string[] myStringSplit = msg.text.Split('-');
-                Data.EnemyWords = msg.EnemyWord;
-                enemywordManager.AddWord();
-                Data.EnemyScore = Int32.Parse(myStringSplit[1]);
-                txtEnemyScore.text = "Enemy: " + myStringSplit[1];
-            }
-            //receivedText.text += msg.text;
+            Debug.Log("2 " + msg.text);
+            Debug.Log("3");
+            string[] myStringSplit = msg.text.Split('-');
+            Data.EnemyWords = msg.EnemyWord;
+            enemywordManager.AddWord();
+            Data.EnemyScore = Int32.Parse(myStringSplit[1]);
+            txtEnemyScore.text = "Enemy: " + myStringSplit[1];
         }
+        Debug.Log("4 " + msg.text);
 
     }
 
@@ -259,7 +245,6 @@ public class MyNetManager : NetworkManager
         msg.text = Data.Score.ToString();
         msg.EnemyWord = Data.EnemyWords;
         inputfield.text = "";
-        Debug.Log("Send to Server - " + msg);
         myClient.Send(MyMsgType.Custom, msg);
 
     }

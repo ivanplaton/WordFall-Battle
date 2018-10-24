@@ -14,6 +14,7 @@ public class Data : MonoBehaviour {
     private static float _EnemyWordPosX = 0;
     private static float _EnemyWordPosY = 0;
 
+    private static bool _MuteSound = false;
     private static bool _StartGame = false;
     private static bool _isClient = false;
     private static bool _isNetwork = false;
@@ -144,6 +145,18 @@ public class Data : MonoBehaviour {
         }
     }
 
+    public static bool MuteSound
+    {
+        get
+        {
+            return _MuteSound;
+        }
+        set
+        {
+            _MuteSound = value;
+        }
+    }
+
     public static int HighScore
     {
         get
@@ -154,8 +167,6 @@ public class Data : MonoBehaviour {
             if (File.Exists(destination)) file = File.OpenRead(destination);
             else
             {
-                File.Create(destination);
-                //file = File.OpenRead(destination);
                 Debug.LogError("File not found, Create new File");
                 return 0;
             }

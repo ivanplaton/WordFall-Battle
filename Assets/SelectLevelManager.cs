@@ -18,6 +18,7 @@ public class SelectLevelManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         btnMedium.enabled = false;
         btnHard.enabled = false;
         btnVeryHard.enabled = false;
@@ -45,6 +46,7 @@ public class SelectLevelManager : MonoBehaviour {
     {
         Data.LevelCategory = "Easy";
         Data.StartGame = true;
+        Data.isNetwork = false;
         SceneManager.LoadScene("Main");
     }
 
@@ -52,6 +54,7 @@ public class SelectLevelManager : MonoBehaviour {
     {
         Data.LevelCategory = "Medium";
         Data.StartGame = true;
+        Data.isNetwork = false;
         SceneManager.LoadScene("Main");
     }
 
@@ -59,6 +62,7 @@ public class SelectLevelManager : MonoBehaviour {
     {
         Data.LevelCategory = "Hard";
         Data.StartGame = true;
+        Data.isNetwork = false;
         SceneManager.LoadScene("Main");
     }
 
@@ -66,6 +70,7 @@ public class SelectLevelManager : MonoBehaviour {
     {
         Data.LevelCategory = "Final";
         Data.StartGame = true;
+        Data.isNetwork = false;
         SceneManager.LoadScene("Main");
     }
 
@@ -73,4 +78,5 @@ public class SelectLevelManager : MonoBehaviour {
     {
         SceneManager.LoadScene("MenuScene");
     }
+
 }

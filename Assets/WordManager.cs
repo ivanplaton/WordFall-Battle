@@ -30,7 +30,6 @@ public class WordManager : MonoBehaviour {
 	{
         Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnRandomWord());
         words.Add(word);
-        //words.Add(wordEnemy);
 
         if (explosion.isPlaying)
         {
@@ -90,7 +89,6 @@ public class WordManager : MonoBehaviour {
 
     void Start()
     {
-        MusicManager.Instance.gameObject.GetComponent<AudioSource>().Stop();
         if(Data.isNetwork)
             TxtLevel.text = "LEVEL: " + Data.LevelCategory;
     }
@@ -161,6 +159,16 @@ public class WordManager : MonoBehaviour {
     public void setScoreIncrement(int value)
     {
         scoreIncrement = value;
+    }
+
+    public void QuitGame()
+    {
+        Data.StartGame = false;
+        Data.Score = 0;
+        Data.EnemyScore = 0;
+        Data.Combo = 0;
+        Data.TwoMultiplier = 0;
+        SceneManager.LoadScene("MenuScene");
     }
 
 }

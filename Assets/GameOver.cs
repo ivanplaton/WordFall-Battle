@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour {
 
     public Image win_Image = null;
     public Image lose_Image = null;
+    public Image gameover_Image = null;
 
     // Use this for initialization
     void Start () {
@@ -22,6 +23,7 @@ public class GameOver : MonoBehaviour {
 
         win_Image.enabled = false;
         lose_Image.enabled = false;
+        gameover_Image.enabled = false;
 
         if (Data.isNetwork)
         {
@@ -54,7 +56,7 @@ public class GameOver : MonoBehaviour {
             }
 
             txtSecondContent.text = "High Score: " + Data.HighScore.ToString();
-
+            gameover_Image.enabled = true;
         }
 
 	}

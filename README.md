@@ -20,5 +20,5 @@ Word-Fall Battle is a typing game. Players need to type the words being drop fas
 
 ## Credits
 Some files are modified from the original content
-[Craftpix](https://craftpix.net/freebies/free-jungle-cartoon-2d-game-ui/) - UI Assets Design
-[Brackeys](https://github.com/Brackeys/Falling-Words-Typing-Game) - Base template for the game
+* [Craftpix](https://craftpix.net/freebies/free-jungle-cartoon-2d-game-ui/) - UI Assets Design
+* [Brackeys](https://github.com/Brackeys/Falling-Words-Typing-Game) - Base template for the game

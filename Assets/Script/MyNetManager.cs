@@ -77,9 +77,9 @@ public class MyNetManager : NetworkManager
     public class CustomMessage : MessageBase
     {
         public string text;
-        public string EnemyWord;
-        public float posX;
-        public float posY;
+        //public string EnemyWord;
+        //public float posX;
+        //public float posY;
     };
 
     public class MyMsgType
@@ -167,7 +167,6 @@ public class MyNetManager : NetworkManager
     public void OnCustomMessage(NetworkMessage netMsg)
     {
         CustomMessage msg = netMsg.ReadMessage<CustomMessage>();
-        Debug.Log("1");
         if (NetworkServer.active)
         {
             string uid = playerManager.getPlayerUidByConnID(netMsg.conn.connectionId);
@@ -176,23 +175,24 @@ public class MyNetManager : NetworkManager
             {
                 //receivedText.text += msg.text = "[" + uid + "...]:" + msg.text + "\n";
                 Data.EnemyScore = Int32.Parse(msg.text);
-                Debug.Log("Recieved word from enemy: " + msg.EnemyWord);
-                Data.EnemyWords = msg.EnemyWord;
-                enemywordManager.AddWord();
                 txtEnemyScore.text = "Enemy: " + msg.text;
                 NetworkServer.SendToAll(MyMsgType.Custom, msg);
+
+                //Remove Code Split Screen Beta
+                //Debug.Log("Recieved word from enemy: " + msg.EnemyWord);
+                //Data.EnemyWords = msg.EnemyWord;
+                //enemywordManager.AddWord();
             }
         }
         else
         {
-            Debug.Log("Score Server -" + msg.text + " Enemy Word-" + msg.EnemyWord);
             string[] myStringSplit = msg.text.Split('-');
-            Debug.Log("Score Server Split -" + myStringSplit[1]);
             Data.EnemyScore = Int32.Parse(myStringSplit[1]);
             txtEnemyScore.text = "Enemy: " + myStringSplit[1];
 
-            Data.EnemyWords = msg.EnemyWord;
-            enemywordManager.AddWord();
+            //Remove Code Split Screen Beta
+            //Data.EnemyWords = msg.EnemyWord;
+            //enemywordManager.AddWord();
         }
 
     }
@@ -227,10 +227,10 @@ public class MyNetManager : NetworkManager
         CustomMessage msg = new CustomMessage();
         int connID = -1;
         msg.text = "S-" + Data.Score.ToString();
-        msg.EnemyWord = Data.EnemyWords;
+        //msg.EnemyWord = Data.EnemyWords;
         PlayerManager.playerData playerData = playerManager.getPlayerByUid(uid);
         connID = playerData.ConnID;
-        Debug.Log("Send to Client - " + msg + " - " + connID.ToString());
+        Debug.Log("Send to Client - " + msg.text + " - " + connID.ToString());
         NetworkServer.SendToClient(connID, MyMsgType.Custom, msg);
     }
 
@@ -243,7 +243,7 @@ public class MyNetManager : NetworkManager
         CustomMessage msg = new CustomMessage();
         //msg.text = inputfield.text;
         msg.text = Data.Score.ToString();
-        msg.EnemyWord = Data.EnemyWords;
+        //msg.EnemyWord = Data.EnemyWords;
         inputfield.text = "";
         myClient.Send(MyMsgType.Custom, msg);
 

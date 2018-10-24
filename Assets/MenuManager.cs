@@ -8,14 +8,17 @@ public class MenuManager : MonoBehaviour {
 
     public int score = 120;
 
-    public Toggle checkBox;
+    public Toggle checkBox = null;
 
     void Start()
     {
 
         if (Data.MuteSound)
         {
-            checkBox.isOn = false;
+            if (checkBox != null)
+            {
+                checkBox.isOn = false;
+            }
         }
 
         if (!MusicManager.Instance.gameObject.GetComponent<AudioSource>().isPlaying)

@@ -24,8 +24,5 @@ EditorBuildSettings:
     path: Assets/ClientMain.unity
     guid: ae87edafb219b0b4e804cde44b240fb4
   - enabled: 1
-    path: Assets/SplitScreenScene.unity
-    guid: 03228fdb836866e4b9bd04be41eab571
-  - enabled: 1
     path: Assets/SelectLevel.unity
     guid: c41543afab3518a42973ff5537a9135b

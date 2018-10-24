@@ -10,7 +10,7 @@ public class WordSpawner : MonoBehaviour {
 
     public WordDisplay SpawnRandomWord ()
 	{
-		Vector3 randomPosition = new Vector3(Random.Range(-2.5f, 2.5f), 5f);
+		Vector3 randomPosition = new Vector3(Random.Range(-4f, 4f), 4.5f);
 
         GameObject wordObj = Instantiate(wordPrefab, randomPosition, Quaternion.identity, wordCanvas);
         wordObj.transform.position = randomPosition;
@@ -18,19 +18,4 @@ public class WordSpawner : MonoBehaviour {
 
 		return wordDisplay;
 	}
-
-    public WordDisplay SpawnEnemyWord()
-    {
-        Vector3 randomPosition = new Vector3(8.2f, 4f);
-
-        GameObject wordObj = Instantiate(wordPrefab, randomPosition, Quaternion.identity, enemyCanvas);
-        //wordObj.transform.SetParent(enemyCanvas.transform);
-        wordObj.transform.position = randomPosition;
-
-        Debug.Log("SpawnEnemyWord Displayed at: " + enemyCanvas + 
-             "\n random pos at: " + randomPosition);
-        WordDisplay wordDisplay = wordObj.GetComponent<WordDisplay>();
-
-        return wordDisplay;
-    }
 }

@@ -28,8 +28,6 @@ public class MyNetManager : NetworkManager
     private GameObject broadcaster;
     private GameObject checkerObject;
 
-    public EnemyWordManager enemywordManager;
-
     void Start()
     {
         address = null;
@@ -186,13 +184,11 @@ public class MyNetManager : NetworkManager
         }
         else
         {
-            string[] myStringSplit = msg.text.Split('-');
-            Data.EnemyScore = Int32.Parse(myStringSplit[1]);
-            txtEnemyScore.text = "Enemy: " + myStringSplit[1];
-
-            //Remove Code Split Screen Beta
-            //Data.EnemyWords = msg.EnemyWord;
-            //enemywordManager.AddWord();
+            if (msg.text.Contains("S")) {
+                string[] myStringSplit = msg.text.Split('-');
+                Data.EnemyScore = Int32.Parse(myStringSplit[1]);
+                txtEnemyScore.text = "Enemy: " + myStringSplit[1];
+            }
         }
 
     }
@@ -350,6 +346,7 @@ public class MyNetManager : NetworkManager
         Data.EnemyScore = 0;
         Data.Combo = 0;
         Data.TwoMultiplier = 0;
+        Debug.Log("GG");
 
         if ("ClientMain" == SceneManager.GetActiveScene().name)
         {

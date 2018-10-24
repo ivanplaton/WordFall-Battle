@@ -185,15 +185,15 @@ public class MyNetManager : NetworkManager
         }
         else
         {
-            Debug.Log("2 " + msg.text);
-            Debug.Log("3");
+            Debug.Log("Score Server -" + msg.text + " Enemy Word-" + msg.EnemyWord);
             string[] myStringSplit = msg.text.Split('-');
-            Data.EnemyWords = msg.EnemyWord;
-            enemywordManager.AddWord();
+            Debug.Log("Score Server Split -" + myStringSplit[1]);
             Data.EnemyScore = Int32.Parse(myStringSplit[1]);
             txtEnemyScore.text = "Enemy: " + myStringSplit[1];
+
+            Data.EnemyWords = msg.EnemyWord;
+            enemywordManager.AddWord();
         }
-        Debug.Log("4 " + msg.text);
 
     }
 

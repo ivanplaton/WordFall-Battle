@@ -50,7 +50,7 @@ public class WordDisplay : MonoBehaviour {
     {
         //Debug.Log(gameObject.name + " collided2D with " + col.gameObject.name);
         //Debug.Log("Word " + text.text + " is destroyed");
-        if (gameObject.name == "Word(Clone)" || gameObject.name == "WordEnemy(Clone)")
+        if (gameObject.name == "Word(Clone)")
         {
             //Debug.Log("Word " + gameObject.GetComponent<Text>().text + " is destroyed");
             Destroy(gameObject);
@@ -59,6 +59,11 @@ public class WordDisplay : MonoBehaviour {
             {
                 SceneManager.LoadScene("GameOver");
             }
+        }
+
+        if(gameObject.name == "WordEnemy(Clone)")
+        {
+            Destroy(gameObject);
         }
     }
 }

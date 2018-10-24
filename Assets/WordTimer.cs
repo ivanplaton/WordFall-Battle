@@ -93,6 +93,7 @@ public class WordTimer : MonoBehaviour {
     {
         if (Data.isConnectedOnNetwork)
         {
+            Debug.Log("initNetworkMessage - Data.isClient - " + Data.isClient);
             if (Data.isClient)
             {
                 networkManager.sendMessageToServer();

@@ -90,7 +90,12 @@ public class WordManager : MonoBehaviour {
     void Start()
     {
         if(Data.isNetwork)
-            TxtLevel.text = "LEVEL: " + Data.LevelCategory;
+        {
+            if (TxtLevel != null)
+            {
+                TxtLevel.text = "LEVEL: " + Data.LevelCategory;
+            }
+        }
     }
 
     void Update()

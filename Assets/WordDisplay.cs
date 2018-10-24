@@ -60,10 +60,5 @@ public class WordDisplay : MonoBehaviour {
                 SceneManager.LoadScene("GameOver");
             }
         }
-
-        if(gameObject.name == "WordEnemy(Clone)")
-        {
-            Destroy(gameObject);
-        }
     }
 }

@@ -56,6 +56,7 @@ public class MenuManager : MonoBehaviour {
     {
         Data.isNetwork = true;
         Data.isNetworkIdentityHost = true;
+        Data.LevelCategory = "Easy";
         SceneManager.LoadScene("ServerMain");
     }
 
@@ -63,6 +64,7 @@ public class MenuManager : MonoBehaviour {
     {
         Data.isNetwork = true;
         Data.isNetworkIdentityHost = false;
+        Data.LevelCategory = "Easy";
         SceneManager.LoadScene("ClientMain");
     }
 
